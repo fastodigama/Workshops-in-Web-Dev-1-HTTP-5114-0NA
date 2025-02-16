@@ -23,7 +23,7 @@ Welcome to the **Workshops-in-Web-Dev-1-HTTP-5114** course! Over 14 weeks, we'll
 - **Week 12:** Contact Form - Implement a functional contact form.
 - **Week 13:** Promises, async/await - Master asynchronous JavaScript techniques.
 - **Week 14:** Review - Recap and solidify your knowledge.
-![alt text](image.png)
+![alt text](image-3.png)
 
 
 ---
