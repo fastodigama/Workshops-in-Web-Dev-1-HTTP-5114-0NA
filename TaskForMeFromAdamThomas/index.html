@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favourite Cars</title>
+    <style>
+        html{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        *, *::before, *::after {
+          box-sizing: inherit;
+        }
+
+        body{   
+            font-family: "Sono", sans-serif;
+            background-color: #252A34;
+            color: #EAEAEA;   
+               
+        }
+        header{
+            
+        }
+
+        h1{
+            font-size: 5rem;
+            text-align: center;
+            color: #08D9D6;
+        }
+        .main{
+
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            
+            
+            
+        }
+
+        .main > div {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content:space-evenly;
+            
+            gap: 5px;
+            
+            
+           
+        }
+
+        .car-card{
+            flex:1;
+            max-width: 400px;
+           
+        }
+        .tile-image {
+            height: 100px;
+            display: block;
+            float: left;
+            border-radius: 5px;
+            border: 5px solid #FF2E63;
+            }
+
+
+        .car-card > p{
+            text-align: justify;
+            font-size: 12px ;
+        }
+        
+        footer{
+            text-align: right;
+            color: #FF2E63;
+        }
+        a{
+            text-decoration: none;
+            color: #FF2E63;
+        }
+
+        @media (max-width: 1250px){
+            .car-card{
+                width: 100%;
+                max-width: 200px;
+                display: block;
+                margin-bottom: 30px;
+                text-align: justify;
+            }
+            .car-card img{
+                width: 100%;
+                display: inline;
+                object-fit: cover;
+                margin-bottom: 10px;
+            }
+        }
+        
+
+
+    </style>
+</head>
+<body>
+    <section name="header">
+
+     <div class="logo"> <h1>Dream Garage</h1></div>
+    </section>
+    <section name="main">
+    <div class="main">
+        <div>
+        <div class="car-card"><img class="tile-image" src="./images/cars/2025_lincoln_navigator_4dr-suv_black-label_fq_oem_3_1280x855.avif" title="2025 lincoln Navigator" alt="2025_lincoln_navigator_4dr-suv_black-label_fq_oem_3_1280x855"><p>3.5L Turbo V6⭐⭐⭐</p></div>
+        <div class="car-card"><img class="tile-image" src="./images/cars/2025_mercedes-benz_s-class_sedan_s-500-4matic_fq_oem_1_1280x855.avif" title="2025 Mercedes S-Class" alt="2025_mercedes-benz_s-class_sedan_s-500-4matic_fq_oem_1_1280x855"><p>4.0L V8 ⭐⭐⭐⭐⭐</p></div>
+        <div class="car-card"><img class="tile-image" src="./images/cars/2025_gmc_yukon_4dr-suv_denali-ultimate_fq_oem_1_1280x855.avif" title="2025 GMC Yukon" alt="2025 2025_gmc_yukon_4dr-suv_elevation_tds4_izmo_5_1280x855"><p>5.3L V8 ⭐⭐⭐⭐⭐😍</p></div>
+        <div class="car-card"><img class="tile-image" src="./images/cars/2025_lincoln_aviator_4dr-suv_reserve_fq_oem_1_1280x855.avif" title="2025 Lincoln Aviator" alt="2025_lincoln_aviator_4dr-suv_reserve_fq_oem_1_1280x855"><p>3.0L V6 ⭐⭐⭐🔥</p></div>
+        <div class="car-card"><img class="tile-image" src="./images/cars/2025_jeep_grand-cherokee-l_4dr-suv_overland_fq_oem_11_1280x855.avif" title="2025 Jeep Grand Cherokee" alt="2025_jeep_grand-cherokee-l_4dr-suv_overland_fq_oem_11_1280x855"><p>3.5L Turbo V6⭐⭐⭐</p></div>
+        <div class="car-card"><img class="tile-image" src="./images/cars/2025_jeep_grand-wagoneer_4dr-suv_series-iii_fq_oem_1_1280x855.jpg" title="2025 Jeep Grand Wagoneer" alt="2025_jeep_grand-wagoneer_4dr-suv_series-iii_fq_oem_1_1280x855"><p>3.0L I‑6 ⭐⭐⭐⭐</p></div>
+        <div class="car-card"><img class="tile-image" src="./images/cars/2023_ram_1500_crew-cab-pickup_laramie_fq_oem_4_1280x855.jpg" title="2023 Ram 1500 Sport" alt="2023_ram_1500_crew-cab-pickup_laramie_fq_oem_4_1280x855"><p>5.7L V8⭐⭐⭐⭐⭐</p></div>
+        <div class="car-card"><img class="tile-image" src="./images/cars/2025_ford_f-150_crew-cab-pickup_stx_fq_oem_1_1280x855.avif" title="2025 Ford F-150" alt="2025_ford_f-150_crew-cab-pickup_stx_fq_oem_1_1280x855"><p>5.0L V8⭐⭐⭐</p></div>
+        <div class="car-card"><img class="tile-image" src="./images/cars/2025_gmc_sierra-1500_crew-cab-pickup_denali_fq_oem_1_1280x855.avif" title="2025 GMC Sierra" alt="2025_gmc_sierra-1500_crew-cab-pickup_denali_fq_oem_1_1280x855"><p>6.2L V8⭐⭐⭐⭐⭐</p></div>
+    </div>
+</div>
+</section>
+<section name="footer">
+    <footer>
+      <p>Image source:  <a href="http://www.edmunds.com">edmunds.com</a> </p>
+    </footer>
+</section>
+</body>
+</html>
