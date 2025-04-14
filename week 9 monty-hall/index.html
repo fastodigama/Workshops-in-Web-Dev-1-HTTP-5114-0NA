@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>the monty hall problem</h1> 
+    <h2></h2>
+
+    <script>
+
+        var stayCount = 0;
+        var switchCount = 0;
+        for(var i = 1; i <=10000 ; i++){
+
+        
+        //create a variable to store the car position
+        var car = Math.ceil(Math.random() * 3);
+        document.write("<p>The car is behind door number " + car + "</p>");
+
+        //create a variable to store the contestant 
+        var doorChoice = Math.ceil(Math.random() * 3);
+        document.write("<p>the contestant picked the door number " + doorChoice + "</p>");
+
+        //remove the chosen door
+
+        remove = Math.ceil(Math.random() * 3);
+        
+    //    while(remove == car || remove == choice)
+    //    {
+    //     remove = Math.ceil(Math.random() * 3 );
+    //    }
+
+       do{
+        var remove = Math.ceil(Math.random() * 3);
+
+       }while(remove == car || remove  == doorChoice)
+       document.write("<p>remove the wrong picked the door number " + remove + "</p>");
+
+       //stay or switch
+
+
+       if(doorChoice === car){
+        stayCount+=1
+
+        document.write("<p style='color:blue;'>Contestant should stay!");
+
+       }else{
+        switchCount+=1
+       
+        document.write("<p style='color:red;'>Contestant should switch");
+
+       }
+
+  
+
+    }
+
+    var numberOfRounds = stayCount + switchCount;
+    var stayPercent = (stayCount/ numberOfRounds * 100).toFixed(2);
+    document.write("<h2 style='color:green;'> Stay percent " + stayPercent); 
+    var switchPercent = (switchCount / numberOfRounds * 100).toFixed(2);
+    document.write("<h2 style='color:red;'> switch percent " + switchPercent);
+
+    </script>
+
+</body>
+</html>

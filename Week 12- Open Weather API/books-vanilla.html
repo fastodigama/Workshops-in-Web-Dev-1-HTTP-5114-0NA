@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Books API</title>
+</head>
+<body>
+    <h1> Google Books API</h1>
+
+    <ul id="Books"></ul>
+
+    <script>
+        // API key to access the Google Books API
+        var key = 'AIzaSyAeWenGfC3O8wtVbiVrrMo2Gleu7bEsEzs';
+    
+        // Base URL for the Google Books API
+        var url = 'https://www.googleapis.com/books/v1/volumes?q=';
+    
+        // Search query for books (in this case, searching for "Sprint")
+        var search = 'Sprint';
+    
+        // Create a new XMLHttpRequest object for making HTTP requests
+        var httpRequest = new XMLHttpRequest;
+    
+        // Define a function that will be called whenever the readyState of the request changes
+        httpRequest.onreadystatechange = function () {
+            // Log the current readyState of the request
+            console.log(httpRequest.readyState);
+    
+            // Log the response text received from the server
+            console.log(httpRequest.responseText);
+    
+            // Check if the request has finished loading (readyState === XMLHttpRequest.DONE)
+            if (httpRequest.readyState == XMLHttpRequest.DONE) {
+                // Parse the response text into a JSON object
+                var data = JSON.parse(httpRequest.responseText);
+    
+                // Log the parsed JSON object
+                console.log(data);
+    
+                // Get the HTML element with the ID "Books"
+                var books = document.getElementById("Books");
+    
+                // Loop through the array of book items in the response
+                for (var i = 0; i < data.items.length; i++) {
+                    // Extract the title of the current book
+                    var title = data.items[i].volumeInfo.title;
+    
+                    // Extract the canonical URL for the current book
+                    var BookUrl = data.items[i].volumeInfo.canonicalVolumeLink;
+    
+                    // Extract the thumbnail image URL for the current book
+                    var bookImg = data.items[i].volumeInfo.imageLinks.thumbnail;
+    
+                    // Log the title of the current book
+                    console.log(title);
+    
+                    // Create an HTML list item with the book title, URL, and thumbnail image
+                    var newBook = "<li> <a href='" + BookUrl + "'>" + title + "</a><br>" +
+                                  "<img src='" + bookImg + "'>" + "</li>";
+    
+                    // Append the new HTML list item to the "Books" element
+                    books.innerHTML += newBook;
+                }
+            }
+        };
+    
+        // Open a GET request to the Google Books API with the search query
+        httpRequest.open("GET", url + search);
+    
+        // Send the HTTP request
+        httpRequest.send();
+    </script>
+    
+</body>
+</html>
